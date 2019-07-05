@@ -7,12 +7,12 @@ class Stopwatch extends Component {
     previousTime:0
   }
 
-  componentDidMount() {
-    this.intervalID = setInterval(this.tick, 100);
-  }
+  // componentDidMount() {
+  //   this.intervalID = setInterval(this.tick, 100);
+  // }
 
   componentWillUnmount() {
-    clearInterval(this.intrevalID);
+    clearInterval(this.intervalID);
   }
 
   tick = () => {
@@ -48,7 +48,7 @@ class Stopwatch extends Component {
   render() {
     const seconds = Math.floor(this.state.elapsedTime/1000);
       return (
-        <div className="stopwatch">
+        <div className={`stopwatch ${this.props.display}`}>
           <h2>Stopwatch</h2>
           <span className="stopwatch-time">{ seconds }</span>
           <button onClick={this.handleStopwatch}>

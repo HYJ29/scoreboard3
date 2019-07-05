@@ -1,6 +1,6 @@
 /* ELEMENT STYLES -------------------- */
 body {
-  background: #e8e7e7; 
+  background: #e8e7e7;
   font-family: arial;
   text-transform: uppercase;
 }
@@ -55,7 +55,7 @@ input[type=text]:focus{
 input[type=submit] {
   display: block;
   font-size: .6em;
-  margin: 15px 15px 15px 0; 
+  margin: 15px 15px 15px 0;
   padding: 10px;
   background-color: #44338D;
   border-radius: 5px;
@@ -68,7 +68,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-button, 
+button,
 input[type=submit] {
   outline: none;
   transition: background-color 0.2s ease,
@@ -237,4 +237,12 @@ svg {
     font-family: monospace;
     font-size: 2em;
     line-height: 2em;
+  }
+
+  /* custom */
+  .hide{
+    display: none;
+  }
+  .show{
+    display: block;
   }
