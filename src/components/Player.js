@@ -28,7 +28,7 @@ class Player extends Component {
     return (<div className="player">
       <span className="player-name">
         <button className="remove-player" onClick={() => removePlayer(id)}>✖</button>
-        <Icon score={score} highest={this.state.highest} getHighest={this.getHighestScore}/>
+        <Icon score={score} getHighest={this.getHighestScore}/>
         {name}
       </span>
 
