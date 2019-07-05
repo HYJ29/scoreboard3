@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 class Stopwatch extends Component {
   state = {
@@ -61,4 +62,7 @@ class Stopwatch extends Component {
   };
 }
 
+Stopwatch.proptypes = {
+  display: PropTypes.string
+}
 export default Stopwatch;

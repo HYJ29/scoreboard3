@@ -1,4 +1,5 @@
 import React, { PureComponent} from 'react';
+import PropTypes from 'prop-types';
 
 class AddPlayerForm extends PureComponent {
   playerInput = React.createRef()
@@ -26,6 +27,10 @@ class AddPlayerForm extends PureComponent {
       </form>
     );
   }
+}
+
+AddPlayerForm.propTypes = {
+  addPlayer: PropTypes.func
 }
 
 export default AddPlayerForm;

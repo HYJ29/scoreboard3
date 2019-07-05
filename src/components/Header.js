@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import Stats from './Stats';
 import Stopwatch from './Stopwatch';
 
@@ -8,9 +10,11 @@ class Header extends Component {
   }
   stopwatchDisplay = () => {
     this.setState(prev=> ({
-      stopwatchShow: prev.stopwatchShow ==="show"? "hide":"show" 
+      stopwatchShow: prev.stopwatchShow ==="show"? "hide":"show"
     }));
   }
+
+
   render() {
     const {
       players,
@@ -24,6 +28,10 @@ class Header extends Component {
       </header>
     );
   }
+}
+
+Header.propTypes = {
+  players: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default Header;
