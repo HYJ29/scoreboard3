@@ -5,9 +5,6 @@ import Counter from './Counter';
 import Icon from './Icons';
 
 class Player extends Component {
-  state = {
-    highest : 1
-  };
 
   static propTypes = {
     name: PropTypes.string,
