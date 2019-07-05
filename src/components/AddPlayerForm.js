@@ -1,22 +1,12 @@
 import React, { PureComponent} from 'react';
 
 class AddPlayerForm extends PureComponent {
-  state = {
-    value: ''
-  }
-
-  changeValue = (e) => {
-    this.setState({
-      value: e.target.value
-    })
-  };
+  playerInput = React.createRef()
 
   addPlayer = (e) => {
     e.preventDefault();
-    this.props.addPlayer(this.state.value);
-    this.setState({
-      value: ''
-    })
+    this.props.addPlayer(this.playerInput.current.value);
+    e.currentTarget.reset()
   };
 
   render() {
@@ -27,8 +17,7 @@ class AddPlayerForm extends PureComponent {
         <input
           type="text"
           placeholder="Enter a players name"
-          value={this.state.value}
-          onChange={this.changeValue}
+          ref={this.playerInput}
         />
         <input
           type="submit"
