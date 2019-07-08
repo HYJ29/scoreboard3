@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Consumer} from './Context';
 import PropTypes from 'prop-types';
 
 import Counter from './Counter';
@@ -11,23 +12,28 @@ class Player extends Component {
     id: PropTypes.number,
     score: PropTypes.number,
     index: PropTypes.number,
-    changeScore: PropTypes.func,
-    removePlayer: PropTypes.func,
     isHighScore: PropTypes.bool
   }
 
 
   render() {
-    const {id, name, score, changeScore, index, removePlayer, isHighScore} = this.props;
-    return (<div className="player">
-      <span className="player-name">
-        <button className="remove-player" onClick={() => removePlayer(id)}>✖</button>
-        <Icon score={score} isHighScore={isHighScore} />
-        {name}
-      </span>
+    const {id, name, score, index, isHighScore} = this.props;
+    return (
+      <Consumer>
+        {context => (
+            <div className="player">
+            <span className="player-name">
+              <button className="remove-player" onClick={() => context.actions.removePlayer(id)}>✖</button>
+              <Icon score={score} isHighScore={isHighScore} />
+              {name}
+            </span>
 
-      <Counter score={score} changeScore={changeScore} index={index}/>
-    </div>);
+            <Counter score={score} index={index}/>
+          </div>
+        )}
+      </Consumer>
+
+  );
   }
 }
 
